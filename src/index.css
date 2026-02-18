@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html , body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+
+}
+
+body {
+  background-color: #0d1117;
+}
+nav {
+  background: rgba(30, 30, 40, 0.85); /* Glassy dark background */
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  padding: 1.2rem 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  box-sizing: border-box;
+  border-bottom: 1.5px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav h1 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin-right: 2vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-btn {
+
+  /* Layout and Styling */
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px; /* Slightly more rounded for a modern feel */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1a1a1a; /* Dark text for contrast */
+  white-space: nowrap;
+
+  /* The "Top Tier" Golden Gradient */
+  background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%);
+  background-size: 200% auto; /* Animation preparation */
+  
+  /* Modern soft shadow and border */
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
+  text-shadow: 0 1px 3px #000, 0 0 2px #000;
+}
+
+.nav-btn:hover {
+  background-position: right center; /* Shifts the shine of the gradient */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+}
+@media (max-width: 600px) {
+  nav {
+    padding: 0.7rem 2vw;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  nav h1 {
+    font-size: 1.1rem;
+    margin-right: 1vw;
+  }
+  .nav-btn {
+    font-size: 0.95rem;
+    padding: 0.5em 1.2em;
+  }
+}
+
+input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.1);
+  width: 90%;     
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.1), 0 0 8px rgba(0,123,255,0.5);
+  scale: 1.02;
+}
+@media (max-width: 480px) {
+  input {
+    width: 95%;      
+    padding: 1rem; 
+    font-size: 1.1rem; 
+    margin: 0.5rem auto;
+  }
+}
+img {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+.user-avatar {
+  display: block;          
+  margin: 2rem auto 1rem auto; 
+  border-radius: 50%;
+  border: 2px solid #ffe259;
+  padding: 0.5rem;          
+  background: #191919;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+}
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%);
+  background-size: 200% auto;
+  color: #1a1a1a;
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
+  text-shadow: 0 1px 3px #000, 0 0 2px #000;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 
+    background 0.3s cubic-bezier(.4,2,.6,1),
+    color 0.2s,
+    transform 0.15s;
+}
+
+.fav-btn:hover, .fav-btn:focus {
+  background-position: right center;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px) scale(1.04);
+  color: #000;
+  border: 1.5px solid #ffe259;
+}
+.bio, .repo-count {
+  text-align: center;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+.repo-card {
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin: 16px 0;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.repo-card:hover {
+  border: 1.5px solid #ffe259;
+  box-shadow: 0 4px 16px rgba(255, 226, 89, 0.08);
+}
+
+.repo-card a {
+  color: #7ecbff;
+  font-weight: 600;
+  font-size: 1.08rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.repo-card a:hover {
+  text-decoration: underline;
+  color: #ffe259;
+}
+
+.repo-card p {
+  color: #ccc;
+  margin: 0.4rem 0 0 0;
+  font-size: 1rem;
+}
+.fav-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.fav-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.fav-back-link {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffe259;
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  padding: 0.5em 1.2em;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(255,226,89,0.08);
+}
+
+.fav-back-link:hover {
+  background: #ffe259;
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.fav-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  margin-top: 2rem;
+}
+
+.fav-card {
+  background: rgba(30,30,40,0.7);
+  border-radius: 16px;
+  padding: 2rem 1rem 1.5rem 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  border: 1.5px solid #ffe25933;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.fav-card:hover {
+  border: 1.5px solid #ffe259;
+  box-shadow: 0 4px 24px rgba(255, 226, 89, 0.15);
+}
+
+.fav-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid #ffe259;
+  background: #191919;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  object-fit: cover;
+  padding: 0;
+}
+
+.fav-login {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffe259;
+  margin-bottom: 0.5rem;
+  word-break: break-all;
+}
+/* Remove Button Styling */
+.remove-btn {
+  background: rgba(255, 75, 75, 0.15); /* Subtle Red Background */
+  border: 1px solid rgba(255, 75, 75, 0.5);
+  color: #ff6b6b;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remove-btn:hover {
+  background: rgba(255, 75, 75, 0.9); /* Solid Red on Hover */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+}
