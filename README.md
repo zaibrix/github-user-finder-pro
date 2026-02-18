@@ -8,7 +8,7 @@
 [![GitHub API](https://img.shields.io/badge/GitHub_REST_API-v3-181717?style=flat-square&logo=github&logoColor=white)](https://docs.github.com/en/rest)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)](./LICENSE)
 
-**[Live Demo](#)** · **[Report a Bug](#)**
+**[Live Demo](https://zaibrix-github-finder.vercel.app/)** · **[Report a Bug](#)**
 
 </div>
 
